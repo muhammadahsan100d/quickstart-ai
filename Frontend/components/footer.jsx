@@ -1,6 +1,6 @@
 import { Divider } from "@nextui-org/divider";
 import { Button } from "@nextui-org/button";
-import { Github, Linkedin, Package } from "lucide-react"; 
+import { Github, Linkedin, Package } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
           <p className="text-sm font-light">
             Made by{" "}
             <a
-              href="https://github.com/Abdul-Moiz31/QuickStart-ai"
+              href="https://github.com/muhammadahsan100d/quickstart-ai"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-white underline"
@@ -22,7 +22,7 @@ export default function Footer() {
           </p>
           {/* <div className="flex space-x-4">
             <a
-              href="https://github.com/Abdul-Moiz31/QuickStart-ai"
+              href="https://github.com/muhammadahsan100d/quickstart-ai"
               target="_blank"
               rel="noopener noreferrer"
             >

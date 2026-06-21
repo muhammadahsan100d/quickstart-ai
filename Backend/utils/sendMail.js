@@ -14,7 +14,7 @@ const sendEmail = async (options) => {
     const mailOptions = {
         from: `"Quickstart-AI" <${process.env.SMPT_MAIL}>`, // Use your email for sending
         replyTo: options.from, // This allows replies to go to the user's email
-        to: ['sheikhzulkifal05@gmail.com','ahsan1617k@gmail.com','abdulmoiz3140@gmail.com','aqibnawab1100@gmail.com'], // Your email to receive the message
+        to: ['ahsan1617k@gmail.com', "muhammadahsan100d@gmail.com"], // Your email to receive the message
         subject: options.subject,
         html: options.html,
     };
