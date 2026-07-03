@@ -15,16 +15,6 @@ export default function Faq() {
         "Once you sign up and add your business, you’ll receive an npm package that you can install into your website. Configure it via your personalized dashboard to match your business needs.",
     },
     {
-      question: "What is the free plan?",
-      answer:
-        "The free plan provides you with 200 credits. Each time a customer query is responded to, one credit is deducted. Once you use up your credits, you’ll need to subscribe to continue using the service.",
-    },
-    {
-      question: "How does the credit system work?",
-      answer:
-        "Every customer interaction handled by QuickStart AI deducts one credit from your account. You’ll start with 200 free credits and can purchase additional credits or move to a subscription plan when they’re used up.",
-    },
-    {
       question: "Can I monitor real-time interactions?",
       answer:
         "Yes, you can view all real-time chats, track responses, and gain insights into customer interactions directly from your business dashboard.",
@@ -33,11 +23,6 @@ export default function Faq() {
       question: "Will QuickStart AI slow down my website?",
       answer:
         "No! QuickStart AI is built to be lightweight, ensuring that your website maintains optimal speed and performance.",
-    },
-    {
-      question: "What happens when my credits run out?",
-      answer:
-        "When your credits are used up, the live chat functionality will pause. You’ll need to either buy more credits or upgrade to a subscription plan to continue using the service.",
     },
     {
       question: "Is there a limit to the number of chats per day?",

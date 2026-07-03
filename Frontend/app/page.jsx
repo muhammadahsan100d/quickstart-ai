@@ -47,12 +47,12 @@ export default function Home() {
       </section>
       <Footer />
 
-      {/* Quick Start AI Token "A1ED-7B411398-CF0F8883"  */}
+      {/* Quick Start AI Token "A1ED-7127544F-1EBAF3E7"  */}
 
       {/* Quantum Web Solutions "A1ED-F15D1246-2BF76968"  */}
 
 
-      <ChatBot token="A1ED-7B411398-CF0F8883"
+      <ChatBot token="A1ED-7127544F-1EBAF3E7"
 
         theme="secondary"
         wantToShowSuggestions={true}

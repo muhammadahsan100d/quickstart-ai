@@ -1,0 +1,47 @@
+========================================================================
+                  QUICKSTART AI - SIGNUP & IDENTITY DETAILS
+========================================================================
+
+Below are the recommended signup credentials and a set of 6 professional,
+pre-written business details (Q&As) to train the chatbot under the new 
+identity. These focus on QuickStart AI's value proposition without mentioning 
+testing or credit systems.
+
+------------------------------------------------------------------------
+1. SIGNUP DETAILS
+------------------------------------------------------------------------
+* Name:                 QuickStart Support
+* Email address:        support@quickstartai.com
+* Password:             QuickStart2026!
+* Business Name:        QuickStart AI
+* Business Description: QuickStart AI enables businesses to seamlessly integrate high-performance customer service chatbots and automate client communications.
+* Business Category:    AI & Technology Services
+
+------------------------------------------------------------------------
+2. BUSINESS DETAILS / CHATBOT FAQS (Add these to train the chatbot)
+------------------------------------------------------------------------
+
+--- Q&A 1 ---
+* Question: What is QuickStart AI and how does it help my business?
+* Answer:   QuickStart AI is an advanced AI automation platform that helps businesses deploy custom customer support chatbots and automate client inquiries in real-time.
+
+--- Q&A 2 ---
+* Question: How does QuickStart AI help with AI integration?
+* Answer:   QuickStart AI provides a simple, direct way to integrate intelligent conversational agents into your website using a lightweight, embedded chat widget that requires zero coding to set up.
+
+--- Q&A 3 ---
+* Question: What kind of artificial intelligence models power the chatbot?
+* Answer:   Our chatbots are powered by state-of-the-art Large Language Models (LLMs) which process user queries naturally, understand context, and provide accurate, human-like customer service.
+
+--- Q&A 4 ---
+* Question: Is the chatbot widget customisable to match my brand?
+* Answer:   Yes, you can fully customize the appearance, branding, and conversational tone of the chat widget directly from your control panel to match your website's aesthetic.
+
+--- Q&A 5 ---
+* Question: What platforms are compatible with the QuickStart AI chatbot?
+* Answer:   The QuickStart AI chatbot is designed to be highly compatible and can be integrated into any web platform, custom site (HTML/JS), or modern web application frameworks like React, Next.js, and Vue.
+
+--- Q&A 6 ---
+* Question: How do I update the information or knowledge base of my chatbot?
+* Answer:   You can easily update your chatbot's knowledge by adding, editing, or removing questions and answers in your Business Details tab, which immediately trains the AI on the new data.
+========================================================================

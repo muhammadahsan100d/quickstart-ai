@@ -11,7 +11,6 @@ import {
   CreditCard,
   Coins,
 } from "lucide-react";
-import Overview from "components/userPageComponents/Overview";
 import Chat from "components/userPageComponents/Chat";
 import BussinessDetails from "components/userPageComponents/BussinessDetails";
 import Token from "components/userPageComponents/Token";
@@ -29,20 +28,16 @@ export default function UserDashboard() {
   const dispatch = useDispatch();
   const { isLoggedOut, loading, user } = useSelector((state) => state.user);
 
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("business details");
   const [isOutOfCreditsOpen, setIsOutOfCreditsOpen] = useState(false);
   const [showLogoutMenu, setShowLogoutMenu] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // For responsive sidebar toggle
 
   // Define tabs
   const tabs = [
-    // { name: "overview", icon: <LayoutDashboard /> },
-    // { name: "sessions", icon: <MessageSquare /> },
     { name: "business details", icon: <Briefcase /> },
     { name: "test chatbot", icon: <MessageSquare /> },
     { name: "token", icon: <Coins /> },
-    // { name: "transactions", icon: <CreditCard /> },
-    { name: "appearance", icon: <Settings className="text-white" /> },
   ];
 
   const router = useRouter();
@@ -102,17 +97,13 @@ export default function UserDashboard() {
             <button
               key={tab.name}
               className={`text-lg open-sans-headings flex items-center w-full text-left py-3 px-5 rounded transition-all duration-300 ${
-                tab.name === "appearance"
-                  ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:shadow-xl transform hover:scale-105"
-                  : activeTab === tab.name
+                activeTab === tab.name
                   ? "bg-[#9E45F1] text-white"
                   : "hover:bg-gray-200 text-gray-700"
               }`}
               onClick={() => {
-                if (tab.name !== "appearance") {
-                  setActiveTab(tab.name);
-                  setIsSidebarOpen(false); // Close the sidebar after clicking a tab
-                }
+                setActiveTab(tab.name);
+                setIsSidebarOpen(false); // Close the sidebar after clicking a tab
               }}
             >
               {/* Update the icon color based on the activeTab */}
@@ -124,22 +115,19 @@ export default function UserDashboard() {
                 {tab.icon}
               </span>
               <span className="text-lg font-semibold">
-                {tab.name === "appearance" ? (
-                  <span
-                    className="flex items-center"
-                    onClick={() =>
-                      alert("This feature is currently under beta version")
-                    }
-                  >
-                    Appearance{" "}
-                    <span className="ml-1 text-sm font-semibold">β</span>
-                  </span>
-                ) : (
-                  tab.name.charAt(0).toUpperCase() + tab.name.slice(1)
-                )}
+                {tab.name.charAt(0).toUpperCase() + tab.name.slice(1)}
               </span>
             </button>
           ))}
+          <button
+            className="text-lg open-sans-headings flex items-center w-full text-left py-3 px-5 rounded transition-all duration-300 hover:bg-gray-200 text-gray-700"
+            onClick={handleLogout}
+          >
+            <span className="mr-3 text-2xl text-gray-600">
+              <LogOut className="h-6 w-6" />
+            </span>
+            <span className="text-lg font-semibold">Logout</span>
+          </button>
         </nav>
       </aside>
 
@@ -147,7 +135,7 @@ export default function UserDashboard() {
       <main className="flex-1 p-8 ml-0  h-screen overflow-y-auto">
         <header className="flex justify-between items-center mb-8">
           <h1 className="text-xl font-bold text-[#661fa8] roboty-headings font-extrabold">
-            {activeTab === "overview"
+            {activeTab === "business details"
               ? `Welcome, ${user?.name}`
               : activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
           </h1>
@@ -199,7 +187,6 @@ export default function UserDashboard() {
         </header>
 
         {/* Render content based on active tab */}
-        {activeTab === "overview" && <Overview />}
         {activeTab === "sessions" && <Chat />}
         {activeTab === "business details" && <BussinessDetails />}
         {activeTab === "test chatbot" && <TestChatbot />}
@@ -207,7 +194,7 @@ export default function UserDashboard() {
         {activeTab === "transactions" && <Transactions />}
 
         {/* Show OutOfCredits modal if business details are less than 5 */}
-        {isOutOfCreditsOpen && activeTab === "overview" && (
+        {isOutOfCreditsOpen && activeTab === "business details" && (
           <OutOfCredits
             onClose={handleCloseModal}
             setActiveTab={setActiveTab}
