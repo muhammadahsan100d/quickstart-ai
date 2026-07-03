@@ -117,22 +117,3 @@ You can start both the Backend server and Frontend Next.js app concurrently from
 cd Backend
 npm run dev
 ```
-
----
-
-## 🔄 Recent Updates & Migrations
-
-### 1. AI API Migration (Gemini ➔ Groq API)
-To remove credit limitations and improve latency, the AI integration was successfully migrated:
-- **Old Client**: Google Generative AI (`@google/generative-ai`)
-- **New Client**: Groq SDK (`groq-sdk` calling `llama-3.3-70b-versatile`)
-- **Backward Compatibility**: Custom class `PollinationsAI` (in `Backend/utils/pollinationsAI.js`) maps structured input from the frontend to Groq API. This ensures the frontend requires zero changes while using the new high-performance model.
-
-### 2. Administrator Mail Alerts Updated
-The email notification system has been modified in `Backend/utils/sendMail.js` to deliver user contact form submissions directly to the owners:
-- `ahsan1617k@gmail.com`
-- `muhammadahsan100d@gmail.com`
-
-### 3. Navigation Links Refactored
-The footer component (`Frontend/components/footer.jsx`) has been updated to link directly to the current repository:
-- `https://github.com/muhammadahsan100d/quickstart-ai`
