@@ -11,8 +11,6 @@ import {
   User,
   Upload,
 } from "lucide-react"; // Import the Upload icon
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage } from "../../Firebase/firebase"; // Import Firebase storage
 import { signUp, login, clearState, loadUser } from "@/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
@@ -43,8 +41,6 @@ export default function AuthForm() {
   const [file, setFile] = useState(null); // File state for image upload
   const [profileImageUrl, setProfileImageUrl] = useState("");
   const toggleAuthMode = () => setIsSignUp(!isSignUp);
-  const [uploadProgress, setUploadProgress] = useState(0); // For tracking upload progress
-  const [uploadingImage, setUploadingImage] = useState(false);
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -124,38 +120,7 @@ export default function AuthForm() {
   const handleSignUp = (e) => {
     e.preventDefault();
     console.log(formData);
-          dispatch(signUp(formData)); 
-
-    // setUploadingImage(true);
-    // const storageRef = ref(storage, `users/${formData.email}`);
-    // const uploadTask = uploadBytesResumable(storageRef, formData.picture);
-    // uploadTask.on(
-    //   "state_changed",
-    //   (snapshot) => {
-    //     const progress =
-    //       (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    //     setUploadProgress(progress);
-    //     console.log(`Upload is ${progress}% done`);
-    //     switch (snapshot.state) {
-    //       case "paused":
-    //         console.log("Upload is paused");
-    //         break;
-    //       case "running":
-    //         console.log("Upload is running");
-    //         break;
-    //     }
-    //   },
-      // (error) => {
-      //   console.log(error);
-      // },
-      // () => {
-      //   getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-      //     console.log("File available at", downloadURL);
-      //     formData.picture = downloadURL;
-      //     setUploadingImage(false);
-      //   });
-      // }
-    
+    dispatch(signUp(formData)); 
   };
 
   // ✅ Replace both useEffects with this single one
@@ -350,43 +315,12 @@ useEffect(() => {
                   </div>
 
                   <div>
-                    {/* <label
-                      htmlFor="profilePicture"
-                      className="block text-sm font-medium text-gray-700"
-                    >
-                      Profile Picture
-                    </label> */}
-                    {/* <div className="mt-1 flex items-center">
-                      <input
-                        id="profilePicture"
-                        name="profilePicture"
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        className="hidden"
-                      />
-                      <label
-                        htmlFor="profilePicture"
-                        className="cursor-pointer mt-1 w-full flex justify-center border-2 border-gray-300 border-dashed rounded-md py-2 text-gray-600"
-                      >
-                        <Upload className="mr-2 h-5 w-5 text-gray-400" />
-                        Upload Profile Picture
-                      </label>
-                    </div> */}
                     {profileImageUrl && (
                       <img
                         src={profileImageUrl}
                         alt="Profile Preview"
                         className="mt-4 w-32 h-32 object-cover rounded-full"
                       />
-                    )}
-                    {uploadingImage && (
-                      <div className="w-full bg-gray-200 h-2 mt-2 rounded-lg">
-                        <div
-                          className="bg-purple-500 h-3 rounded-full"
-                          style={{ width: `${uploadProgress}%` }}
-                        ></div>
-                      </div>
                     )}
                   </div>
                 </>

@@ -1,10 +1,9 @@
 const Groq = require('groq-sdk');
 
 /**
- * Groq API utility for text generation
- * Free AI service - replaces Pollinations.ai
+ * Groq AI SDK client wrapper for text generation
  */
-class PollinationsAI {
+class GroqAI {
   constructor() {
     this.client = new Groq({
       apiKey: process.env.GROQ_API_KEY || process.env.GROK_API_KEY
@@ -62,7 +61,6 @@ class PollinationsAI {
 
       const generatedText = await this.generateText(prompt);
 
-      // Return in Gemini-compatible format — nothing else in your project needs to change
       return {
         response: {
           candidates: [
@@ -81,4 +79,4 @@ class PollinationsAI {
   }
 }
 
-module.exports = PollinationsAI;
+module.exports = GroqAI;

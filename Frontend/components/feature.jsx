@@ -34,16 +34,6 @@ export default function KeyBenefitsSection() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full lg:max-w-7xl">
         {[
           {
-            title: "Tracking Time",
-            description: "Monitor essential business metrics with ease and efficiency.",
-            icon: FaClock,
-          },
-          {
-            title: "Data Reports",
-            description: "Generate comprehensive reports to analyze your performance.",
-            icon: FaChartLine,
-          },
-          {
             title: "Customer Support",
             description: "Dedicated support to assist you whenever you need it.",
             icon: FaHeadset,

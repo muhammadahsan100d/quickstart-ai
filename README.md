@@ -1,6 +1,6 @@
 # 🚀 QuickStart AI
 
-QuickStart AI is a premium, full-stack SaaS platform designed to empower businesses with free, custom AI-powered chatbots and proposal generation. It allows businesses to easily train a chatbot on their specific info, test it in an interactive playground, and deploy it to automate customer service.
+QuickStart AI is a premium, full-stack SaaS platform designed to empower businesses with free, custom AI-powered chatbots. It allows businesses to easily train a chatbot on their specific info, test it in an interactive playground, and deploy it to automate customer service.
 
 ---
 
@@ -39,7 +39,6 @@ An example of the chatbot widget seamlessly integrated and tested on another pla
 - **Embedded Chat Widget**: Integrate a floating conversational widget onto external websites.
 - **Interactive Playground**: Chatbot playground allowing real-time testing of system prompt behaviors, business detail context, and user input.
 - **Token Management**: Integrated Token Tracker panel to manage usage limits.
-- **Proposal Writer**: Instant custom proposal generator tailored to specific prompts and requirements.
 - **Automated Mail Alerts**: Contact/inquiry form powered by Nodemailer that automatically notifies the project owners.
 
 ---

@@ -8,15 +8,12 @@ import {
   LayoutDashboard,
   Briefcase,
   MessageSquare,
-  CreditCard,
   Coins,
 } from "lucide-react";
 import Chat from "components/userPageComponents/Chat";
 import BussinessDetails from "components/userPageComponents/BussinessDetails";
 import Token from "components/userPageComponents/Token";
 import TestChatbot from "components/userPageComponents/TestChatbot";
-import OutOfCredits from "components/userPageComponents/OutOfCredits";
-import Transactions from "components/userPageComponents/Transactions";
 import { useRouter } from "next/navigation";
 import { logout, clearState, loadUser } from "@/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,7 +26,6 @@ export default function UserDashboard() {
   const { isLoggedOut, loading, user } = useSelector((state) => state.user);
 
   const [activeTab, setActiveTab] = useState("business details");
-  const [isOutOfCreditsOpen, setIsOutOfCreditsOpen] = useState(false);
   const [showLogoutMenu, setShowLogoutMenu] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // For responsive sidebar toggle
 
@@ -51,15 +47,7 @@ export default function UserDashboard() {
       router.push("/start");
       clearState();
     }
-    if (user?.bussinessDetails?.length < 5) {
-      setIsOutOfCreditsOpen(true);
-    }
   }, [router]);
-
-  const handleCloseModal = () => {
-    setIsOutOfCreditsOpen(false);
-    setActiveTab("business details");
-  };
 
   useEffect(() => {
     if (isLoggedOut) {
@@ -191,15 +179,6 @@ export default function UserDashboard() {
         {activeTab === "business details" && <BussinessDetails />}
         {activeTab === "test chatbot" && <TestChatbot />}
         {activeTab === "token" && <Token />}
-        {activeTab === "transactions" && <Transactions />}
-
-        {/* Show OutOfCredits modal if business details are less than 5 */}
-        {isOutOfCreditsOpen && activeTab === "business details" && (
-          <OutOfCredits
-            onClose={handleCloseModal}
-            setActiveTab={setActiveTab}
-          />
-        )}
       </main>
     </div>
   );

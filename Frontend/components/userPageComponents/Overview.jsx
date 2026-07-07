@@ -7,8 +7,6 @@ import { getAllSessions, getSessionsMonthlyData, loadUser } from "@/slices/userS
 const Overview = () => {
   const dispatch = useDispatch();
   const { sessions, data } = useSelector((state) => state.user);
-  const [credits, setCredits] = useState(0);
-
   useEffect(() => {
     dispatch(getAllSessions());
     dispatch(getSessionsMonthlyData());
@@ -26,8 +24,6 @@ const Overview = () => {
       value: sessions?.length ? sessions.length : 0, 
       change: "+10%" 
     },
-    { title: "Total Credits", icon: User, value: "256", change: "+5%" },
-    { title: "Current Plan", icon: Settings, value: "Free", subtext: "" },
   ];
 
   return (

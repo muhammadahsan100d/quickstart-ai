@@ -71,9 +71,9 @@ export async function generateJSONContent(prompt, options = {}) {
 }
 
 /**
- * Main class
+ * Groq AI Client Wrapper
  */
-export class PollinationsAI {
+export class GroqAI {
   constructor(config = {}) {
     this.backendUrl = config.backendUrl || baseurl;
   }
@@ -91,4 +91,4 @@ export class PollinationsAI {
   }
 }
 
-export default PollinationsAI;
+export default GroqAI;

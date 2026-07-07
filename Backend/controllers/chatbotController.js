@@ -1,5 +1,5 @@
 const catchAsyncError = require("../middleware/catchAsyncError");
-const PollinationsAI = require("../utils/pollinationsAI");
+const GroqAI = require("../utils/groqAI");
 const User = require("../models/userModel");
 const Session = require("../models/sessionModel");
 const Message = require("../models/messageModel");
@@ -45,9 +45,9 @@ exports.getResponse = catchAsyncError(async (req, res, next) => {
     ? messages.map(detail => `Customer: ${detail.question}\nBot: ${detail.answer}`).join("\n")
     : "No previous messages";
 
-  const pollinationsAI = new PollinationsAI();
+  const groqAI = new GroqAI();
 
-  const completion = await pollinationsAI.generateContent({
+  const completion = await groqAI.generateContent({
     contents: [
       {
         parts: [
@@ -117,9 +117,9 @@ exports.testByOwner = catchAsyncError(async (req, res, next) => {
     ? messages.map(detail => `Customer: ${detail.question}\nBot: ${detail.answer}`).join("\n")
     : "No previous messages";
 
-  const pollinationsAI = new PollinationsAI();
+  const groqAI = new GroqAI();
 
-  const completion = await pollinationsAI.generateContent({
+  const completion = await groqAI.generateContent({
     contents: [
       {
         parts: [
@@ -148,8 +148,8 @@ exports.generateTextGeneral = catchAsyncError(async (req, res, next) => {
     });
   }
 
-  const pollinationsAI = new PollinationsAI();
-  const generatedText = await pollinationsAI.generateText(prompt);
+  const groqAI = new GroqAI();
+  const generatedText = await groqAI.generateText(prompt);
 
   res.status(200).json({
     success: true,

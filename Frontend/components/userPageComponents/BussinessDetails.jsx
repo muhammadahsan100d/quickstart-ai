@@ -14,7 +14,7 @@ import {
   Delete,
   Trash2,
 } from "lucide-react";
-import { generateJSONContent } from "@/lib/pollinations";
+import { generateJSONContent } from "@/lib/groq";
 
 import { Card, CardHeader, CardTitle, CardContent } from "components/ui/card";
 import { Button } from "components/ui/button";

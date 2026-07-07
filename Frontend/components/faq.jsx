@@ -15,19 +15,9 @@ export default function Faq() {
         "Once you sign up and add your business, you’ll receive an npm package that you can install into your website. Configure it via your personalized dashboard to match your business needs.",
     },
     {
-      question: "Can I monitor real-time interactions?",
-      answer:
-        "Yes, you can view all real-time chats, track responses, and gain insights into customer interactions directly from your business dashboard.",
-    },
-    {
       question: "Will QuickStart AI slow down my website?",
       answer:
         "No! QuickStart AI is built to be lightweight, ensuring that your website maintains optimal speed and performance.",
-    },
-    {
-      question: "Is there a limit to the number of chats per day?",
-      answer:
-        "QuickStart AI allows you to customize the appearance of the chat widget to match your website's branding and design.",
     },
     {
       question: "How secure is the chat data?",

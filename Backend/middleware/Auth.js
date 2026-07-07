@@ -5,18 +5,28 @@ const CustomError = require("../utils/errorHandler")
 
 exports.isAuthenticatedUser = catchAsyncError(async (req, res, next) => {
     const { token } = req.cookies;
-    // console.log(token);
   
     if (!token) {
-      return next(new CustomError("please login to access this resources", 401));
+      return res.status(200).json({
+        success: false,
+        message: "please login to access this resources"
+      });
     }
   
-    try
-    {
-        const decodedData =await jwt.verify(token,process.env.JWT_SECRET);
-    req.user = await User.findOne({_id:decodedData.id});
-    }catch(err){
-        return next(new CustomError("User not found with this id", 404));
+    try {
+      const decodedData = await jwt.verify(token, process.env.JWT_SECRET);
+      req.user = await User.findOne({ _id: decodedData.id });
+      if (!req.user) {
+        return res.status(200).json({
+          success: false,
+          message: "User not found with this id"
+        });
+      }
+    } catch (err) {
+      return res.status(200).json({
+        success: false,
+        message: "please login to access this resources"
+      });
     }
     next();
   });

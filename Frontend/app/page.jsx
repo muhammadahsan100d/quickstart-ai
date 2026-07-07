@@ -3,11 +3,10 @@ import Hero from "@/components/hero";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import About from "@/components/about";
-import Pricing from "@/components/pricing";
 import Faq from "@/components/faq";
 import Feature from "@/components/feature";
 import Contact from "@/components/contact";
-import { ChatBot } from "@quickstart-ai/chatbot";
+import { ChatBot } from "chatbot-widget";
 import { useEffect } from "react";
 import { loadUser } from "@/slices/userSlice";
 import { useDispatch } from "react-redux";
@@ -36,9 +35,6 @@ export default function Home() {
       <section id="features">
         <Feature />
       </section>
-      {/* <section id="pricing">
-    <Pricing />
-  </section> */}
       <section id="faq">
         <Faq />
       </section>
@@ -52,8 +48,8 @@ export default function Home() {
       {/* Quantum Web Solutions "A1ED-F15D1246-2BF76968"  */}
 
 
+      {/* Hot reload triggered */}
       <ChatBot token="A1ED-7127544F-1EBAF3E7"
-
         theme="secondary"
         wantToShowSuggestions={true}
       />
