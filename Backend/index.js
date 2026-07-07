@@ -18,7 +18,13 @@ connectDB();
 
 // In your backend app.js/server.js
 app.use(cors({
-  origin: ["http://localhost:3000","https://quick-start-ai-client.vercel.app"],
+  origin: (origin, callback) => {
+    if (!origin || origin.startsWith('http://localhost') || origin === 'https://quick-start-ai-client.vercel.app') {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
